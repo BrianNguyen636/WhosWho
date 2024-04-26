@@ -1,0 +1,79 @@
+.container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#musicPlayer {
+    background-color: aliceblue;
+    color: black;
+    width: 400px;
+    height: min-content;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40px;
+    box-shadow: 5px 5px 5px black;
+}
+#volume {
+    display: flex;
+    flex-direction: row;
+}
+#volume button {
+    width: 30px;
+    margin:10px;
+    border-color: aqua;
+    border-radius: 5px;
+}
+#volume button:hover {
+    background-color: aqua;
+    border-color: white;
+}
+#playpause {
+    font-size: larger;
+    padding: 5px;
+    background-color: #00ff38;
+    border: none;
+    border-radius: 20px;
+    margin: 10px;
+    box-shadow: 5px 5px 5px gray;
+}
+#input {
+    display: flex;
+    flex-direction: row;
+}
+
+#footer {
+    margin-bottom: 20px;
+}
+#footer p {
+    width: 200px;
+    font-size: larger;
+}
+#footer button {
+    width:200px;
+    height:60px;
+    font-size: large;
+    border-radius: 40px;
+    border-color: aqua;
+}
+#input button {
+    width:min-content;
+    min-width: 200px;
+    height:min-content;
+    min-height: 80px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: large;
+}
+
+button:hover {
+    opacity: 80%;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}

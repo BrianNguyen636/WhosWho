@@ -1,0 +1,22 @@
+.container{
+    width: fit-content;
+    background-color: #C6C2C2;
+    color: black;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+p{
+    font-size: 20px;
+}
+#scores {
+    text-align: left;
+}
+.scoreBoard{
+    width: 160px;
+    height: min-content;
+    margin: 20px;
+    background-color: white;
+    padding: 20px;
+}

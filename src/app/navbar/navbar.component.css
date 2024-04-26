@@ -1,0 +1,26 @@
+.navBar {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    padding: 10px; 
+    background-color: #842C93;
+  }
+  
+  .navBar h1 {
+    margin: 0; 
+}
+
+.navBar a{
+    text-decoration: none;
+    color: white;
+}
+
+a .active {
+  color:#00ff38;
+}
+
+a:hover {
+  opacity: 80%;
+}
+
+

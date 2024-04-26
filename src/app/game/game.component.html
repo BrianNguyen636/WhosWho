@@ -1,0 +1,54 @@
+<div class = "container">
+    <br/>
+    <p>Game Mode: {{modeDisplay}}</p>
+    <br/>
+    <div *ngIf="!endgame">
+        <h1 *ngIf="authLoading || loading">Loading</h1>
+        <div *ngIf="!authLoading && !loading && gameInProgress" id = "musicPlayer" >
+            <img src="../assets/spotify.png" alt="spotify logo">
+            <button id = "playpause" (click) = playPause()>Play/Pause Song</button>
+            <div id = "volume">
+                <button (click)= turnDown()>-</button>
+                <button (click) =turnUp()>+</button>
+            </div>
+            <!-- <div *ngIf = "gameInProgress">{{song.name}}</div> -->
+        </div>
+    </div>
+    <br/>
+    <div *ngIf="endgame">
+        <h1 style="color: red;">Game Over.</h1>
+    </div>
+    <h1 *ngIf="gameInProgress">Current Score: {{score}}</h1>
+    <br/>
+    <div *ngIf="endgame"> 
+        <!-- GAME OVER LOGIC HERE -->
+        <form id = "nameForm" (ngSubmit)="onSubmit($event)">
+            Save your score:
+            <input id="nameInput" type="text" placeholder="Input your name" name="name"/>
+            <button type="submit" [disabled]="scoreSubmitted">Submit</button>
+        </form>
+        <p *ngIf="scoreSubmitted">Score Submitted!</p>
+    </div>
+    <h1 *ngIf="gameInProgress">Time Left: {{timerDisplay}}</h1>
+    <br/>
+    <h1 *ngIf="loading">Loading Choices...</h1>
+    <div id ="input" *ngIf="!loading && gameInProgress">
+        <button (click)="guess(choices[0])" [ngStyle]="{'background-color': (isCorrect(0)) ? '#00ff38' : '#ffffff'}">{{choices[0]}}</button>
+        <button (click)="guess(choices[1])" [ngStyle]="{'background-color': (isCorrect(1)) ? '#00ff38' : '#ffffff'}">{{choices[1]}}</button>
+        <button (click)="guess(choices[2])" [ngStyle]="{'background-color': (isCorrect(2)) ? '#00ff38' : '#ffffff'}">{{choices[2]}}</button>
+        <button (click)="guess(choices[3])" [ngStyle]="{'background-color': (isCorrect(3)) ? '#00ff38' : '#ffffff'}">{{choices[3]}}</button>
+    </div>
+    <!-- <form id = "input" (ngSubmit)="onSubmit($event)">
+        <input id="guessInput" type="text" placeholder="Input guess" name="guess"/>
+        <button type="submit">Submit</button>
+    </form> -->
+    <br/>
+    <div id = "footer" *ngIf="!gameInProgress || timerPaused">
+        <p *ngIf="!gameInProgress">
+            Start the game
+        </p>
+        <button (click)="loadNext()">Load Next Song</button>
+    </div>
+    <p *ngIf = "gameInProgress" id="warning">WARNING: Switching tabs will end your game!</p>
+    <button *ngIf="gameInProgress" (click)="gameOver()">End Game</button>
+</div>
